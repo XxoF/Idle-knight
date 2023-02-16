@@ -68,7 +68,7 @@ ___
 
 ## PROJECT SKETCH
 Player's attribues
-![Player_Attribues](concept_art/character%20attributes.png)
+![Player_Attribues](concept_art/character_attributes.png)
 
 Main Scene
 ![Main Scene](concept_art/main_scene.png)
