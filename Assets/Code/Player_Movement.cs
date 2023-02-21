@@ -9,7 +9,7 @@ public class Player_Movement : MonoBehaviour
     public Vector3 moveVector;
 
     private Animator            m_animator;
-    private float m_delayToIdle = 0.05f;
+    //private float m_delayToIdle = 0.05f;
     
     void Start()
     {
