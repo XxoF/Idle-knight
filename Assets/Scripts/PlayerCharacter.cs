@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerCharacter : Character
 {
 
-    // public string getName(){
-    //     return base.firstname;
-    // }
+    
+
 }
