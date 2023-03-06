@@ -74,7 +74,7 @@ Main Scene
 ![Main Scene](concept_art/main_scene.png)
 
 Battle Scene
-![Battle Scene](concerp_art/battle_scene.png)
+![Battle Scene](concept_art/battle_scene.png)
 
 Reward to Upgrade
 ![Upgrade reward](concept_art/upgrade_reward.png)
