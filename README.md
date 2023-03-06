@@ -75,3 +75,7 @@ Main Scene
 
 Reward to Upgrade
 ![Upgrade reward](concept_art/upgrade_reward.png)
+
+-----------------------
+## Update Timeline
+* March 7, 2023: Hoàn thành `BattleScene` với những tính năng cơ bản: Thanh HP, lượng Damage nhận vào.
