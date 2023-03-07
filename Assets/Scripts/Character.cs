@@ -39,7 +39,7 @@ public abstract class Character : MonoBehaviour
     private float playerAttackCurTime = 0;
 
 
-    private void Awake(){
+    private void Awake() {
         currentHP = baseHP;
     }
 
@@ -48,7 +48,7 @@ public abstract class Character : MonoBehaviour
         DamagePopup.Create(dmgPopupPoint.position, dmgAmount);
     }
 
-    public void TakeDamage(int enemy_dmg){
+    public void TakeDamage(int enemy_dmg) {
         //Debug.Log("Player dmg: " + enemy_dmg);
 
         // DR = Damage reduction
@@ -66,21 +66,21 @@ public abstract class Character : MonoBehaviour
         {
             currentHP = 0;
         }
-           
 
-        Debug.Log(firstname + " received " + dmg_received + "dmg");
+
+        //Debug.Log(firstname + " received " + dmg_received + "dmg");
     }
 
-    private void Die(){
+    private void Die() {
         // Add action or trigger the restart game
     }
 
-    public string getName(){
+    public string getName() {
         return firstname;
     }
 
-    public float get_Atk_rate(){
-        return (float) ATK_Speed / (100 * BAT);
+    public float get_Atk_rate() {
+        return (float)ATK_Speed / (100 * BAT);
     }
 
     public float get_cd_ATK()
@@ -88,10 +88,23 @@ public abstract class Character : MonoBehaviour
         return 1 / get_Atk_rate();
     }
 
-    public int getDMG(){
+    public int getDMG() {
         return damage;
     }
+    public int GetArmor()
+    {
+        return armor;
+    }
 
+    public void SetArmor(int value)
+    {
+        this.armor = value;
+    }
+
+    public void setDMG(int damage)
+    {
+        this.damage = damage;
+    }
     public int getCurrentHP()
     {
         return currentHP;
@@ -99,10 +112,14 @@ public abstract class Character : MonoBehaviour
 
     public int getBaseHP()
     {
-        return baseHP;
+        return this.baseHP;
     }
 
-    public bool isDie(){
+    public void setBaseHP(int newHP)
+    {
+        this.baseHP = newHP;
+    }
+    public bool isDie() {
         return (currentHP <= 0);
     }
 
@@ -123,6 +140,16 @@ public abstract class Character : MonoBehaviour
                 }
             }
         }
-        
+
+    }
+
+    public int GetATKSpeed()
+    {
+        return ATK_Speed;
+    }
+
+    public void SetATKSpeed(int value)
+    {
+        ATK_Speed = value;
     }
 }

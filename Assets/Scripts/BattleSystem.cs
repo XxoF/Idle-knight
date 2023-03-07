@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BattleSystem : MonoBehaviour
 {
 
     public GameObject playerGameObject, enemyGameObject;
 
+    public GameObject upgradeUI;
     private float player_cd_atk;
     private float enemy_cd_atk;
 
@@ -16,6 +18,8 @@ public class BattleSystem : MonoBehaviour
     private PlayerCharacter player;
     private EnemyCharacter enemy;
 
+    private GameObject UpgradeUI;
+    private bool isUpgraded = false;
     void Start()
     {
 
@@ -32,6 +36,9 @@ public class BattleSystem : MonoBehaviour
 
         Debug.Log("Player CD: " + player_cd_atk);
         Debug.Log("Enemy CD: " + enemy_cd_atk);
+
+        UpgradeUI = GameObject.FindGameObjectWithTag("UpgradeUI");
+        UpgradeUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,6 +63,11 @@ public class BattleSystem : MonoBehaviour
         }
 
 
+        if (enemy.isDie() && !isUpgraded)
+        {
+            UpgradeUI.SetActive(true);
+            isUpgraded = true;
+        }
     }
 
 }
