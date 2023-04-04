@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public abstract class Character : MonoBehaviour
+//[CreateAssetMenu(fileName = "New Character", menuName = "Character")]
+public class Character : MonoBehaviour
 {
 
+    public static Character instance;
     [SerializeField]
-    protected string firstname;
+    protected new string name;
 
     [SerializeField]
     protected int damage;
@@ -34,10 +36,14 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected Transform dmgPopupPoint;
 
+
+
     [SerializeField]
     private int currentHP;
+
     private float playerAttackCurTime = 0;
 
+    
 
     private void Awake() {
         currentHP = baseHP;
@@ -68,7 +74,7 @@ public abstract class Character : MonoBehaviour
         }
 
 
-        //Debug.Log(firstname + " received " + dmg_received + "dmg");
+        //Debug.Log(name + " received " + dmg_received + "dmg");
     }
 
     private void Die() {
@@ -76,7 +82,7 @@ public abstract class Character : MonoBehaviour
     }
 
     public string getName() {
-        return firstname;
+        return name;
     }
 
     public float get_Atk_rate() {
@@ -127,7 +133,7 @@ public abstract class Character : MonoBehaviour
     {
         if (!this.isDie())
         {
-            if (target.enabled)
+            if (true)//target.enabled
             {
                 if (playerAttackCurTime < this.get_cd_ATK())
                 {
@@ -151,5 +157,10 @@ public abstract class Character : MonoBehaviour
     public void SetATKSpeed(int value)
     {
         ATK_Speed = value;
+    }
+
+    public void setDmgPopupPoint(Transform pos)
+    {
+        this.dmgPopupPoint = pos;
     }
 }
