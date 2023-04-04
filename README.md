@@ -81,4 +81,16 @@ Reward to Upgrade
 
 -----------------------
 ## Update Timeline
-* March 7, 2023: Hoàn thành `BattleScene` với những tính năng cơ bản: Thanh HP, lượng Damage nhận vào.
+* March 7, 2023: cập nhật `Battle Scene` với những tính năng cơ bản: Thanh HP, lượng Damage nhận vào.
+* April 4, 2023: Cật nhật `Battle Scence` tự động mở khi gặp `enemyEncounter`. Tự động lấy chỉ số của `player` và `enemy` vào battle. Hiển thị bảng `Upgrade` cho `player`. Tự động trở về `Main Scene` sau khi win combat.
+
+
+## TODO
+* Tạo cơ chế spawn quái
+* Cập nhật UI và HUD cho :`Start game`, `Win combat` và `Lose combat`.
+* Xây dựng End game và Restart game.
+* Xây dựng hệ thống data quái có những thuộc tính `stats` khác nhau
+* Xây dựng Boss
+* Xây dựng màn chơi looping hoặc level.
+* Cập nhật sprite và animation cho `player` và `enemy`
+* Cập nhật Background, music audio, ...
