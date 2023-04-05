@@ -24,7 +24,7 @@ public class Player_Movement : MonoBehaviour
         float positionX = transform.position.x;
         float positionY = transform.position.y;
         float positionZ = transform.position.z;
-        transform.Translate(1 * moveSpeed * Time.deltaTime, 0, 0);
+        transform.Translate(-1 * moveSpeed * Time.deltaTime, 0, 0);
 
         //m_animator.SetInteger("AnimState", 1);
     }

@@ -1073,6 +1073,10 @@ MonoBehaviour:
   enemyGameObject: {fileID: 0}
   playerHPText: {fileID: 1476980600}
   enemyHPText: {fileID: 116071460}
+  playerDmgPopupPoint: {fileID: 0}
+  enemyDmgPopupPoint: {fileID: 0}
+  playerPosition: {fileID: 0}
+  enemyPosition: {fileID: 0}
 --- !u!1 &1031160434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1088,7 @@ GameObject:
   - component: {fileID: 1031160436}
   - component: {fileID: 1031160435}
   m_Layer: 0
-  m_Name: SceneController
+  m_Name: BattleSceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,13 +1108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGameObject: {fileID: 0}
   enemyGameObject: {fileID: 0}
-  upgradeUI: {fileID: 1787519053}
+  isUpgraded: 0
   playerAttackCurTime: 0
   enemyAttackCurtime: 0
-  playerDmgPopupPoint: {fileID: 0}
-  enemyDmgPopupPoint: {fileID: 0}
-  playerPosition: {fileID: 0}
-  enemyPosition: {fileID: 0}
   battleState: 0
 --- !u!4 &1031160436
 Transform:

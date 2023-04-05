@@ -18,7 +18,7 @@ public class BattleSceneController : MonoBehaviour
     [SerializeField]
     private float playerAttackCurTime, enemyAttackCurtime;
 
-    private Character player, enemy;
+    public Character player, enemy;
 
     private GameObject UpgradeUI;
     
@@ -27,7 +27,8 @@ public class BattleSceneController : MonoBehaviour
     {
         BATTLE,
         WIN,
-        LOSE
+        LOSE,
+        OUT_BATTLE,
     }
 
     public BattleState battleState;
@@ -104,15 +105,22 @@ public class BattleSceneController : MonoBehaviour
                 else
                 {
                     //UpgradeUI.SetActive(false);
-                    GameManager.instance.gameState = GameManager.GameStates.IDLE_STATE;
-                    SceneManager.LoadScene("Main_Scene");
+                    battleState = BattleState.OUT_BATTLE;
                 }
                 
                 break;
 
             case (BattleState.LOSE):
-                //Debug.Log("Player lose");
+                Debug.Log("Player lose");
                 break;
+
+            case (BattleState.OUT_BATTLE):
+                GameManager.instance.gameState = GameManager.GameStates.IDLE_STATE;
+                GameManager.instance.endBattle = true;
+                SceneManager.LoadScene("Main_Scene");
+                break;
+
+
         }
 
     }
