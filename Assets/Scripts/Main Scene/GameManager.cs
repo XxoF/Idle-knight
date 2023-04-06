@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemy;
 
     public bool isWalking = false;
-    public bool isPlayerAlive = false;
+    public bool isPlayerAlive = true;
     public bool gotAttacked = false;
     public bool endBattle = false;
 
@@ -21,13 +21,21 @@ public class GameManager : MonoBehaviour
     private List<GameObject> enemyList;
     private int enemyCount = 0;
 
-
+    [SerializeField]
     private static float xInit = -35f;
+    [SerializeField]
     private static float yInit = 4.5f;
+    [SerializeField]
     private static float zInit = 1f;
 
-    private static Vector3 playerPos = new Vector3(xInit, yInit, zInit);
+    [Range(10f, 100f)]
+    [SerializeField]
+    private static float enemyRange = 50f;
 
+    private static Vector3 playerPos = new Vector3(xInit, yInit, zInit);
+    private static Vector3 enemySpawnPosition = playerPos + new Vector3(enemyRange, 0f, 1f);
+
+    [SerializeField]
     private bool initState = true;
     //private static float PLAYER_SPEED = 20F;
     //private float playerSpeed;
@@ -42,6 +50,15 @@ public class GameManager : MonoBehaviour
 
     public GameStates gameState;
 
+    private void Start()
+    {
+        if (initState == true)
+        {
+            initState = false;
+            SpawnPlayer(playerPos);
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+    }
 
     private void Awake()
     {
@@ -54,8 +71,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
- 
+
         gameState = GameStates.IDLE_STATE;
         //player_mv = player.GetComponent<Player_Movement>();
     }
@@ -68,10 +84,12 @@ public class GameManager : MonoBehaviour
             case (GameStates.WORLD_STATE):
 
                 //Debug.Log("WORLD STATE");
-                enemy = GameObject.FindGameObjectWithTag("Enemy");
-                endBattle = false;
+                
 
                 SpawnEnemy();
+
+                enemy = GameObject.FindGameObjectWithTag("Enemy");
+                
 
                 if (gotAttacked)
                 {
@@ -97,24 +115,17 @@ public class GameManager : MonoBehaviour
 
             case (GameStates.IDLE_STATE):
                 //Debug.Log("IDLE STATE");
+                // After battle
 
-                if (initState)
+                if (isPlayerAlive)
                 {
-                    //SpawnPlayer(initPOS);
-                    initState = false;
-                }
-                else
-                {
-                    // After battle
-                    if (isPlayerAlive)
-                    {
-                        Destroy(enemy);
-                        player.transform.position = playerPos;
-                    }                      
+                    Destroy(enemy);
                 }
 
-                isPlayerAlive = true;
-                isWalking = true;
+                player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.position = playerPos;
+
+                endBattle = false;
                 gotAttacked = false;
                 gameState = GameStates.WORLD_STATE;
 
@@ -149,9 +160,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        float xRange = 20f;
-        Vector3 spawnPosition = player.transform.position + new Vector3(xRange, 0f, 0f); 
-
+       
         string enemyPrefabPath = "Assets/Resources/Prefabs/Enemy.prefab";
 
         var enemyPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(enemyPrefabPath);
@@ -160,7 +169,7 @@ public class GameManager : MonoBehaviour
 
         if (enemyCount <= 0)
         {
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefab, enemySpawnPosition, Quaternion.identity);
         }
         
         // Spawn enemy cách player 1 đoạn

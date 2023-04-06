@@ -85,6 +85,7 @@ public class BattleSceneController : MonoBehaviour
                 if ((player.isDie())/* && (player.enabled == true)*/)
                 {
                     Debug.Log("Player Lose");
+                    GameManager.instance.isPlayerAlive = false;
                     battleState = BattleState.LOSE;
                     //player.enabled = false;
                 }
