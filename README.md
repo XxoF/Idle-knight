@@ -103,12 +103,12 @@ Reward to Upgrade
 -------------------------
 ## Prototype art
 Main Scene
-![Main Scene](concept_art\prototype\main_scene.JPG)
+![Main Scene](concept_art/prototype/battle_scene_0.JPG)
 
 Battle scene
-![Battle Scene](https://github.com/XxoF/Idle-knight/blob/develop/concept_art/prototype/battle_scene_0.JPG)
-![Battle Scene](https://github.com/XxoF/Idle-knight/blob/develop/concept_art/prototype/battle_scene_1.JPG)
-![Battle Scene](https://github.com/XxoF/Idle-knight/blob/develop/concept_art/prototype/battle_scene_2.JPG)
+![Battle Scene](concept_art/prototype/battle_scene_0.JPG)
+![Battle Scene](concept_art/prototype/battle_scene_1.JPG)
+![Battle Scene](concept_art/prototype/battle_scene_2.JPG)
 
 Upgrade UI
-![Upgrade UI](concept_art\prototype\upgrade_scene.JPG)
+![Upgrade UI](concept_art/prototype/upgrade_scene.JPG)
