@@ -85,17 +85,17 @@ Reward to Upgrade
 * April 4, 2023: Cật nhật `Battle Scence` tự động mở khi gặp `enemyEncounter`. Tự động lấy chỉ số của `player` và `enemy` vào battle. Hiển thị bảng `Upgrade` cho `player`. Tự động trở về `Main Scene` sau khi win combat.
 * April 6, 2023: Prototype gameplay mechanic, có cơ chế spawn quái mới sau khi combat. Xây dựng Init game basic và looping mechanic cho gameplay.
 * April 7, 2023: Thêm background scrolling động cho game.
+* April 9, 2023: Cập nhật sprite và animation cho `player` và `enemy`
 
 
 ## TODO
-
-* Cập nhật sprite và animation cho `player` và `enemy`
-* music audio, ...
-* Xây dựng End game và Restart game.
 * Cập nhật UI và HUD cho :`Start game`, `Win combat` và `Lose combat`.
+* Xây dựng End game và Restart game.
+* music audio, ...
 * Hiện Stats của `player`
 
 ## Bonus Feature
+* Thêm sprite cho quái
 * Xây dựng hệ thống data quái có những thuộc tính `stats` khác nhau
 * Xây dựng Boss
 * Xây dựng màn chơi looping hoặc level.
