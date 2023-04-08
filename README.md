@@ -100,3 +100,15 @@ Reward to Upgrade
 * Xây dựng Boss
 * Xây dựng màn chơi looping hoặc level.
 
+-------------------------
+## Prototype art
+Main Scene
+![Main Scene](concept_art\prototype\main_scene.jpg)
+
+Battle scene
+![Battle Scene](concept_art\prototype\battle_scene_0.jpg)
+![Battle Scene](concept_art\prototype\battle_scene_1.jpg)
+![Battle Scene](concept_art\prototype\battle_scene_2.jpg)
+
+Upgrade UI
+![Upgrade UI](concept_art\prototype\upgrade_scene.jpg)

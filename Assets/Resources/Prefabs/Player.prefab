@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: DK
-  damage: 10
+  damage: 200
   BAT: 1.7
-  ATK_Speed: 100
+  ATK_Speed: 200
   armor: 10
   baseHP: 600
   isPlayer: 1
