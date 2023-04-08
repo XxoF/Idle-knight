@@ -103,7 +103,7 @@ Reward to Upgrade
 -------------------------
 ## Prototype art
 Main Scene
-![Main Scene](concept_art/prototype/battle_scene_0.JPG)
+![Main Scene](concept_art/prototype/main_scene.JPG)
 
 Battle scene
 ![Battle Scene](concept_art/prototype/battle_scene_0.JPG)
