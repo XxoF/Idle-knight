@@ -103,12 +103,12 @@ Reward to Upgrade
 -------------------------
 ## Prototype art
 Main Scene
-![Main Scene](concept_art\prototype\main_scene.jpg)
+![Main Scene](concept_art\prototype\main_scene.JPG)
 
 Battle scene
-![Battle Scene](concept_art\prototype\battle_scene_0.jpg)
-![Battle Scene](concept_art\prototype\battle_scene_1.jpg)
-![Battle Scene](concept_art\prototype\battle_scene_2.jpg)
+![Battle Scene](concept_art\prototype\battle_scene_0.JPG)
+![Battle Scene](concept_art\prototype\battle_scene_1.JPG)
+![Battle Scene](concept_art\prototype\battle_scene_2.JPG)
 
 Upgrade UI
-![Upgrade UI](concept_art\prototype\upgrade_scene.jpg)
+![Upgrade UI](concept_art\prototype\upgrade_scene.JPG)
