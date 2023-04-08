@@ -72,6 +72,7 @@ public class Character : MonoBehaviour
         else
         {
             currentHP = 0;
+            Die();
         }
 
 
@@ -79,7 +80,7 @@ public class Character : MonoBehaviour
     }
 
     private void Die() {
-        // Add action or trigger the restart game
+        this.GetComponent<AnimatorController>().DiedAnimation();
     }
 
     public string getName() {

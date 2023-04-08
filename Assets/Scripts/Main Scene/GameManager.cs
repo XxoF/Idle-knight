@@ -29,9 +29,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private static float zInit = 1f;
 
-    [Range(10f, 100f)]
-    [SerializeField]
-    private static float enemyRange = 50f;
+    //[Range(10f, 100f)]
+    //[SerializeField]
+    //private static float enemyRange = 50f;
 
     [SerializeField]
     public static Vector3 playerPos = new Vector3(xInit, yInit, zInit);

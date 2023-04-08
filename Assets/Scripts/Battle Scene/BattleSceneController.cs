@@ -79,6 +79,7 @@ public class BattleSceneController : MonoBehaviour
                 if ((enemy.isDie())/* && (enemy.enabled == true)*/)
                 {
                     Debug.Log("Player win");
+                    //enemy.GetComponent<AnimatorController>().setIsDied(true);
                     battleState = BattleState.WIN;
                     //enemy.enabled = false;
                 }
@@ -86,6 +87,7 @@ public class BattleSceneController : MonoBehaviour
                 if ((player.isDie())/* && (player.enabled == true)*/)
                 {
                     Debug.Log("Player Lose");
+                    //player.GetComponent<AnimatorController>().setIsDied(true);
                     GameManager.instance.isPlayerAlive = false;
                     battleState = BattleState.LOSE;
                     //player.enabled = false;

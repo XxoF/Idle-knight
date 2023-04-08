@@ -14,6 +14,8 @@ public class AnimatorController : MonoBehaviour
     public bool isAttack = false;
     public bool gotAttacked = false;
 
+    public bool isDied = false;
+
     void Update()
     {
 
@@ -30,6 +32,13 @@ public class AnimatorController : MonoBehaviour
             animator.SetTrigger("gotAttacked");
             gotAttacked = false;
         }
+
+        /*
+        if (isDied)
+        {
+            animator.SetTrigger("Died");
+        }
+        */
     }
 
 
@@ -41,5 +50,15 @@ public class AnimatorController : MonoBehaviour
     public void setGotAttacked(bool state)
     {
         this.gotAttacked = state;
+    }
+
+    public void setIsDied(bool state)
+    {
+        this.isDied = state;
+    }
+
+    public void DiedAnimation()
+    {
+        animator.SetTrigger("Died");
     }
 }
