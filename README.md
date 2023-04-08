@@ -90,7 +90,7 @@ Reward to Upgrade
 ## TODO
 
 * Cập nhật sprite và animation cho `player` và `enemy`
-* Cập nhật Background, music audio, ...
+* music audio, ...
 * Xây dựng End game và Restart game.
 * Cập nhật UI và HUD cho :`Start game`, `Win combat` và `Lose combat`.
 * Hiện Stats của `player`

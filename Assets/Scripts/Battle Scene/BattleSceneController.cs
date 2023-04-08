@@ -73,6 +73,7 @@ public class BattleSceneController : MonoBehaviour
         {
             case (BattleState.BATTLE):
                 player.Attack(enemy);
+                //PlayerAnimatorController.instance.isAttack = true;
                 enemy.Attack(player);
 
                 if ((enemy.isDie())/* && (enemy.enabled == true)*/)

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject enemy;
 
+    public Animator playerAnimation; 
     public bool isWalking = false;
     public bool isPlayerAlive = true;
     public bool gotAttacked = false;
@@ -32,13 +33,22 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private static float enemyRange = 50f;
 
-    private static Vector3 playerPos = new Vector3(xInit, yInit, zInit);
-    private static Vector3 enemySpawnPosition = playerPos + new Vector3(enemyRange, 0f, 1f);
+    [SerializeField]
+    public static Vector3 playerPos = new Vector3(xInit, yInit, zInit);
+
+    //[SerializeField]
+    //private static Vector3 enemySpawnPosition = playerPos + new Vector3(enemyRange, 0f, 0f);
 
     [SerializeField]
     private bool initState = true;
     //private static float PLAYER_SPEED = 20F;
     //private float playerSpeed;
+
+    [SerializeField]
+    private Transform playerSpawnPosition;
+
+    [SerializeField]
+    private Transform enemySpawnPosition;
 
     public enum GameStates
     {
@@ -55,7 +65,7 @@ public class GameManager : MonoBehaviour
         if (initState == true)
         {
             initState = false;
-            SpawnPlayer(playerPos);
+            SpawnPlayer(playerSpawnPosition.position);
             player = GameObject.FindGameObjectWithTag("Player");
         }
     }
@@ -83,8 +93,9 @@ public class GameManager : MonoBehaviour
         {
             case (GameStates.WORLD_STATE):
 
+                isWalking = true;
                 //Debug.Log("WORLD STATE");
-                
+
 
                 SpawnEnemy();
 
@@ -123,8 +134,9 @@ public class GameManager : MonoBehaviour
                 }
 
                 player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = playerPos;
+                player.transform.position = playerSpawnPosition.position;
 
+                isWalking = false;
                 endBattle = false;
                 gotAttacked = false;
                 gameState = GameStates.WORLD_STATE;
@@ -139,6 +151,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(enemy);
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(playerSpawnPosition);
+        DontDestroyOnLoad(enemySpawnPosition);
         isWalking = false;
         SceneManager.LoadScene("Battle_Scene");
         gotAttacked = false;
@@ -169,7 +183,7 @@ public class GameManager : MonoBehaviour
 
         if (enemyCount <= 0)
         {
-            Instantiate(enemyPrefab, enemySpawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefab, enemySpawnPosition.position, Quaternion.identity);
         }
         
         // Spawn enemy cách player 1 đoạn

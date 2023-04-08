@@ -61,6 +61,7 @@ public class Character : MonoBehaviour
         float DR = (0.06f * armor) / (1f + 0.06f * armor);
 
         int dmg_received = Mathf.RoundToInt(enemy_dmg - enemy_dmg * DR);
+
         dmgReceivedPopup(dmg_received);
 
 
@@ -141,6 +142,8 @@ public class Character : MonoBehaviour
                 }
                 else
                 {
+                    this.gameObject.GetComponent<AnimatorController>().setIsAttack(true);
+                    target.gameObject.GetComponent<AnimatorController>().setGotAttacked(true);
                     target.TakeDamage(this.damage);
                     playerAttackCurTime = 0;
                 }
