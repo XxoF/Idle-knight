@@ -62,12 +62,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (initState == true)
-        {
-            initState = false;
-            SpawnPlayer(playerSpawnPosition.position);
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
+
     }
 
     private void Awake()
@@ -80,6 +75,13 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
         {
             Destroy(gameObject);
+        }
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (!player)
+        {
+             SpawnPlayer(playerSpawnPosition.position);
+             player = GameObject.FindGameObjectWithTag("Player");
         }
 
         gameState = GameStates.IDLE_STATE;
