@@ -86,11 +86,10 @@ Reward to Upgrade
 * April 6, 2023: Prototype gameplay mechanic, có cơ chế spawn quái mới sau khi combat. Xây dựng Init game basic và looping mechanic cho gameplay.
 * April 7, 2023: Thêm background scrolling động cho game.
 * April 9, 2023: Cập nhật sprite và animation cho `player` và `enemy`
-
+* April 29, 2023: Cập nhật Main menu, Pause menu và Restart game.
 
 ## TODO
-* Cập nhật UI và HUD cho :`Start game`, `Win combat` và `Lose combat`.
-* Xây dựng End game và Restart game.
+* Cập nhật UI và HUD cho :`Win combat` và `Lose combat`.
 * music audio, ...
 * Hiện Stats của `player`
 

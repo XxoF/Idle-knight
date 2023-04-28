@@ -175,8 +175,6 @@ MonoBehaviour:
   gotAttacked: 0
   endBattle: 1
   initState: 1
-  playerSpawnPosition: {fileID: 443488716}
-  enemySpawnPosition: {fileID: 317865065}
   gameState: 0
 --- !u!1 &167250050
 GameObject:
@@ -1120,7 +1118,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &989705028
 AudioListener:
@@ -2316,5 +2314,5 @@ Transform:
   - {fileID: 1067100614}
   - {fileID: 1630195089}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

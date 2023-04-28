@@ -40,15 +40,20 @@ public class GameManager : MonoBehaviour
     //private static Vector3 enemySpawnPosition = playerPos + new Vector3(enemyRange, 0f, 0f);
 
     [SerializeField]
-    private bool initState = true;
+    public bool initState = true;
     //private static float PLAYER_SPEED = 20F;
     //private float playerSpeed;
 
+    /*
     [SerializeField]
     private Transform playerSpawnPosition;
 
     [SerializeField]
     private Transform enemySpawnPosition;
+    */
+
+    private static Vector3 playerSpawnPosition = new Vector3(-45, 1.5f, 0);
+    private static Vector3 enemySpawnPosition = new Vector3(0, 1.5f, 0);
 
     public enum GameStates
     {
@@ -58,15 +63,18 @@ public class GameManager : MonoBehaviour
         IDLE_STATE
     }
 
-    public GameStates gameState;
+    public GameStates gameState = GameStates.IDLE_STATE;
 
     private void Start()
     {
-
+        Debug.Log("Start game");
     }
 
     private void Awake()
     {
+
+        Debug.Log("Awake!");
+
         // Check if instance exist
         if (instance == null)
         {
@@ -77,14 +85,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        if (!player)
-        {
-             SpawnPlayer(playerSpawnPosition.position);
-             player = GameObject.FindGameObjectWithTag("Player");
-        }
-
-        gameState = GameStates.IDLE_STATE;
         //player_mv = player.GetComponent<Player_Movement>();
     }
 
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
 
                 if (gotAttacked)
                 {
+                    initState = false;
                     gameState = GameStates.BATTLE_STATE;
                     enemy.GetComponent<Player_Movement>().moveSpeed = 0f;
                     StartBattle();      
@@ -130,33 +131,74 @@ public class GameManager : MonoBehaviour
                 //Debug.Log("IDLE STATE");
                 // After battle
 
+                if (!initState)
+                {
+                    Scene mainScene = SceneManager.GetSceneByName("Main_Scene");
+                    SceneManager.MoveGameObjectToScene(player, mainScene);
+                    SceneManager.MoveGameObjectToScene(gameObject, mainScene);
+                }
+                
+
+
                 if (isPlayerAlive)
                 {
                     Destroy(enemy);
                 }
 
                 player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = playerSpawnPosition.position;
+                if (!player)
+                {
+                    SpawnPlayer(playerSpawnPosition);
+                    player = GameObject.FindGameObjectWithTag("Player");
+                }
+
+                player.transform.position = playerSpawnPosition;
 
                 isWalking = false;
                 endBattle = false;
                 gotAttacked = false;
                 gameState = GameStates.WORLD_STATE;
 
-                break;         
+
+
+
+                break;
+
+            case (GameStates.INIT_STATE):
+                if (!player)
+                {
+                    SpawnPlayer(playerSpawnPosition);
+                    player = GameObject.FindGameObjectWithTag("Player");
+                }
+
+                gameState = GameStates.IDLE_STATE;
+                break;
         }
     }
 
     public void StartBattle()
     {
         print("STart battle");
+
+        /*
+        SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("Battle_Scene"));
+        SceneManager.MoveGameObjectToScene(enemy, SceneManager.GetSceneByName("Battle_Scene"));
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("Battle_Scene"));
+        */
+
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(enemy);
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(playerSpawnPosition);
-        DontDestroyOnLoad(enemySpawnPosition);
+
+        SceneManager.LoadSceneAsync("Battle_Scene");
+
+
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(enemy);
+        DontDestroyOnLoad(gameObject);
+
         isWalking = false;
-        SceneManager.LoadScene("Battle_Scene");
+        
         gotAttacked = false;
 
     }
@@ -185,7 +227,7 @@ public class GameManager : MonoBehaviour
 
         if (enemyCount <= 0)
         {
-            Instantiate(enemyPrefab, enemySpawnPosition.position, Quaternion.identity);
+            Instantiate(enemyPrefab, enemySpawnPosition, Quaternion.identity);
         }
         
         // Spawn enemy cách player 1 đoạn
@@ -200,4 +242,6 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+
 }

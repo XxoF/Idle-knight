@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: DK
-  damage: 200
+  damage: 400
   BAT: 1.7
   ATK_Speed: 200
   armor: 10
@@ -206,3 +206,4 @@ MonoBehaviour:
   animator: {fileID: 8294436846217276302}
   isAttack: 0
   gotAttacked: 0
+  isDied: 0

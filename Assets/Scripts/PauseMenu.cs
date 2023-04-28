@@ -43,14 +43,30 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Load Menu");
         gameIsPause = false;
 
+        SceneManager.LoadSceneAsync("Menu_Scene");   
+            
+
+        DestroyAllGameObjects();
+
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene("Menu_Scene");
+
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    public void DestroyAllGameObjects()
+    {
+        GameObject[] GameObjects = (FindObjectsOfType<GameObject>() as GameObject[]);
+
+        for (int i = 2; i < GameObjects.Length; i++)
+        {
+            Destroy(GameObjects[i]);
+            Debug.Log(GameObjects[i]);
+        }
     }
 }
