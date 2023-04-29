@@ -35,7 +35,6 @@ public class BattleSceneController : MonoBehaviour
 
     private void Start()
     {
-
     }
 
     void Awake()
@@ -46,7 +45,6 @@ public class BattleSceneController : MonoBehaviour
         player = playerGameObject.GetComponent<Character>();
         enemy = enemyGameObject.GetComponent<Character>();
 
-
         Debug.Log("Player: " + player.getName());
         Debug.Log("Enemy: " + enemy.getName());
 
@@ -55,8 +53,8 @@ public class BattleSceneController : MonoBehaviour
         player_cd_atk = player.get_cd_ATK();
         enemy_cd_atk = enemy.get_cd_ATK();
 
-        Debug.Log("Player CD: " + player_cd_atk);
-        Debug.Log("Enemy CD: " + enemy_cd_atk);
+        //Debug.Log("Player CD: " + player_cd_atk);
+        //Debug.Log("Enemy CD: " + enemy_cd_atk);
 
         UpgradeUI.SetActive(false);
         DeadMenuUI.SetActive(false);

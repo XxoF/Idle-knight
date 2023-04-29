@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
 
     public void StartBattle()
     {
-        print("STart battle");
+        print("Start battle");
 
         /*
         SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("Battle_Scene"));
