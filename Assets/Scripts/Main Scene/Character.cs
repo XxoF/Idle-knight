@@ -118,6 +118,11 @@ public class Character : MonoBehaviour
         return currentHP;
     }
 
+    public void updateCurrentHP()
+    {
+        currentHP = baseHP;
+    }
+
     public int getBaseHP()
     {
         return this.baseHP;

@@ -87,6 +87,7 @@ Reward to Upgrade
 * April 7, 2023: Thêm background scrolling động cho game.
 * April 9, 2023: Cập nhật sprite và animation cho `player` và `enemy`
 * April 29, 2023: Cập nhật Main menu, Pause menu và Restart game.
+* Cập nhật `Dead UI` và cơ chế Restart Game mới sau khi chết.
 
 ## TODO
 * Cập nhật UI và HUD cho :`Win combat` và `Lose combat`.

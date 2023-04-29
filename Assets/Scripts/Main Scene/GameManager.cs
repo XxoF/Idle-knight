@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         IDLE_STATE
     }
 
-    public GameStates gameState = GameStates.IDLE_STATE;
+    public GameStates gameState = GameStates.INIT_STATE;
 
     private void Start()
     {
@@ -146,11 +146,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 player = GameObject.FindGameObjectWithTag("Player");
-                if (!player)
-                {
-                    SpawnPlayer(playerSpawnPosition);
-                    player = GameObject.FindGameObjectWithTag("Player");
-                }
+                player.GetComponent<Character>().updateCurrentHP();
 
                 player.transform.position = playerSpawnPosition;
 
@@ -169,6 +165,7 @@ public class GameManager : MonoBehaviour
                 {
                     SpawnPlayer(playerSpawnPosition);
                     player = GameObject.FindGameObjectWithTag("Player");
+                    player.GetComponent<Character>().updateCurrentHP();
                 }
 
                 gameState = GameStates.IDLE_STATE;
