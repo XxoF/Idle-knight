@@ -43,10 +43,10 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Load Menu");
         gameIsPause = false;
 
-        SceneManager.LoadSceneAsync("Menu_Scene");   
-            
+        SceneManager.LoadSceneAsync("Menu_Scene");
 
-        DestroyAllGameObjects();
+
+        DestroyAllRemainGameObjects();
 
         Time.timeScale = 1f;
 
@@ -59,14 +59,14 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void DestroyAllGameObjects()
+    public void DestroyAllRemainGameObjects()
     {
-        GameObject[] GameObjects = (FindObjectsOfType<GameObject>() as GameObject[]);
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 
-        for (int i = 2; i < GameObjects.Length; i++)
-        {
-            Destroy(GameObjects[i]);
-            Debug.Log(GameObjects[i]);
-        }
+        Destroy(gameManager);
+        Destroy(player);
+        Destroy(enemy);
     }
 }
