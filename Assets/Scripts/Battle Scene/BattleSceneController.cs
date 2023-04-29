@@ -21,7 +21,7 @@ public class BattleSceneController : MonoBehaviour
     public Character player, enemy;
 
     private GameObject UpgradeUI;
-    
+    private GameObject DeadMenuUI;
 
     public enum BattleState
     {
@@ -59,7 +59,10 @@ public class BattleSceneController : MonoBehaviour
         Debug.Log("Enemy CD: " + enemy_cd_atk);
 
         UpgradeUI = GameObject.FindGameObjectWithTag("UpgradeUI");
+        DeadMenuUI = GameObject.Find("Dead Menu");
+
         UpgradeUI.SetActive(false);
+        DeadMenuUI.SetActive(false);
 
         battleState = BattleState.BATTLE;
         isUpgraded = false;
@@ -116,6 +119,8 @@ public class BattleSceneController : MonoBehaviour
 
             case (BattleState.LOSE):
                 Debug.Log("Player lose");
+                DeadMenuUI.SetActive(true);
+                Time.timeScale = 0f;
                 break;
 
             case (BattleState.OUT_BATTLE):
