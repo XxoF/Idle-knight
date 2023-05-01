@@ -19,8 +19,11 @@ public class AnimatorController : MonoBehaviour
     public bool isWalking = false;
     void Update()
     {
+        if (gameObject.GetComponent<Character>().checkIsPlayer()) {
+            animator.SetBool("isWalking", isWalking);
+        }
 
-        animator.SetBool("isWalking", isWalking);
+        
 
         if (isAttack)
         {

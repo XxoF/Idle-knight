@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
     {
 
         print("Spawn player");
-        string playerPrefabPath = "Assets/Resources/Prefabs/Player.prefab";
+        string playerPrefabPath = "Assets/Prefabs/Player.prefab";
 
         var playerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(playerPrefabPath);
 
@@ -217,7 +217,7 @@ public class GameManager : MonoBehaviour
     void SpawnEnemy()
     {
        
-        string enemyPrefabPath = "Assets/Resources/Prefabs/Enemy.prefab";
+        string enemyPrefabPath = "Assets/Prefabs/Enemy.prefab";
 
         var enemyPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(enemyPrefabPath);
 

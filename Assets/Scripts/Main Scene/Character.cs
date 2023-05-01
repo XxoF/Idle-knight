@@ -172,4 +172,9 @@ public class Character : MonoBehaviour
     {
         this.dmgPopupPoint = pos;
     }
+
+    public bool checkIsPlayer()
+    {
+        return isPlayer;
+    }
 }
