@@ -16,10 +16,11 @@ public class AnimatorController : MonoBehaviour
 
     public bool isDied = false;
 
+    public bool isWalking = false;
     void Update()
     {
 
-        animator.SetBool("isWalking", GameManager.instance.isWalking);
+        animator.SetBool("isWalking", isWalking);
 
         if (isAttack)
         {

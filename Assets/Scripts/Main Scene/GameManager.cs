@@ -52,8 +52,8 @@ public class GameManager : MonoBehaviour
     private Transform enemySpawnPosition;
     */
 
-    private static Vector3 playerSpawnPosition = new Vector3(-45, 1.5f, 0);
-    private static Vector3 enemySpawnPosition = new Vector3(0, 1.5f, 0);
+    private static Vector3 playerSpawnPosition = new Vector3(-35, 1.5f, 0);
+    private static Vector3 enemySpawnPosition = new Vector3(0f, 5f, 0);
 
     public enum GameStates
     {
@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
             case (GameStates.WORLD_STATE):
 
                 isWalking = true;
+                player.GetComponent<AnimatorController>().isWalking = isWalking;
                 //Debug.Log("WORLD STATE");
 
 
@@ -151,6 +152,8 @@ public class GameManager : MonoBehaviour
                 player.transform.position = playerSpawnPosition;
 
                 isWalking = false;
+                player.GetComponent<AnimatorController>().isWalking = isWalking;
+
                 endBattle = false;
                 gotAttacked = false;
                 gameState = GameStates.WORLD_STATE;
@@ -183,19 +186,17 @@ public class GameManager : MonoBehaviour
         SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("Battle_Scene"));
         */
 
-        DontDestroyOnLoad(player);
-        DontDestroyOnLoad(enemy);
-        DontDestroyOnLoad(gameObject);
-
         SceneManager.LoadSceneAsync("Battle_Scene");
 
 
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(enemy);
         DontDestroyOnLoad(gameObject);
+  
 
         isWalking = false;
-        
+        player.GetComponent<AnimatorController>().isWalking = isWalking;
+
         gotAttacked = false;
 
     }

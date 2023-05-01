@@ -45,6 +45,7 @@ public class BattleSceneController : MonoBehaviour
         player = playerGameObject.GetComponent<Character>();
         enemy = enemyGameObject.GetComponent<Character>();
 
+        
         Debug.Log("Player: " + player.getName());
         Debug.Log("Enemy: " + enemy.getName());
 
@@ -61,6 +62,7 @@ public class BattleSceneController : MonoBehaviour
 
         battleState = BattleState.BATTLE;
         isUpgraded = false;
+
     }
 
     // Update is called once per frame

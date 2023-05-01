@@ -69,7 +69,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.7601882, y: 2.4418614}
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: DK
-  damage: 400
+  damage: 100
   BAT: 1.7
-  ATK_Speed: 200
-  armor: 10
+  ATK_Speed: 100
+  armor: 100
   baseHP: 600
   isPlayer: 1
   dmgReceivedText: {fileID: 0}
@@ -207,3 +207,4 @@ MonoBehaviour:
   isAttack: 0
   gotAttacked: 0
   isDied: 0
+  isWalking: 1
