@@ -17,11 +17,6 @@ public class GameManager : MonoBehaviour
     public bool gotAttacked = false;
     public bool endBattle = false;
 
-    private Player_Movement player_mv;
-
-    private List<GameObject> enemyList;
-    private int enemyCount = 0;
-
     [SerializeField]
     private static float xInit = -35f;
     [SerializeField]
@@ -64,6 +59,10 @@ public class GameManager : MonoBehaviour
     }
 
     public GameStates gameState = GameStates.INIT_STATE;
+
+    public GameObject playerPrefab;
+    public GameObject enemyPrefab;
+    public List<GameObject> enemyListPrefab;
 
     private void Start()
     {
@@ -205,9 +204,6 @@ public class GameManager : MonoBehaviour
     {
 
         print("Spawn player");
-        string playerPrefabPath = "Assets/Prefabs/Player.prefab";
-
-        var playerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(playerPrefabPath);
 
         Instantiate(playerPrefab, pos, Quaternion.identity);
 
@@ -216,14 +212,16 @@ public class GameManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-       
-        string enemyPrefabPath = "Assets/Prefabs/Enemy.prefab";
 
-        var enemyPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(enemyPrefabPath);
+        int numberEnemyPrefab = enemyListPrefab.Count;
 
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        int randomIndexEnemy = Random.Range(0, numberEnemyPrefab);
 
-        if (enemyCount <= 0)
+        enemyPrefab = enemyListPrefab[randomIndexEnemy];
+
+        Debug.Log(randomIndexEnemy);
+
+        if (enemy == null)
         {
             Instantiate(enemyPrefab, enemySpawnPosition, Quaternion.identity);
         }

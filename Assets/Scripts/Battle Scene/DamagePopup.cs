@@ -47,8 +47,8 @@ public class DamagePopup : MonoBehaviour
 
     public static DamagePopup Create(Vector3 position, int dmgAmount)
     {
-        string dmgPrejab = "Assets/Prefabs/DmgReceivedPopup.prefab";
-        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(dmgPrejab);
+        string dmgPrejabPath = "DmgReceivedPopup";
+        var prefab = (GameObject)Resources.Load(dmgPrejabPath, typeof(GameObject));
 
         GameObject dmgPopupTransform = Instantiate(prefab, position, Quaternion.identity);
         DamagePopup dmgPopup = dmgPopupTransform.GetComponent<DamagePopup>();

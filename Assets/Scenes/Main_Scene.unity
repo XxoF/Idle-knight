@@ -176,6 +176,11 @@ MonoBehaviour:
   endBattle: 1
   initState: 1
   gameState: 0
+  playerPrefab: {fileID: 5443092837302519230, guid: 8be380f0357faaa4885ae1aeca33922c, type: 3}
+  enemyPrefab: {fileID: 0}
+  enemyListPrefab:
+  - {fileID: 490265138180355438, guid: e3e706aeff4a1aa4c840d8d4e9b25f64, type: 3}
+  - {fileID: 1953370838520886378, guid: a9a1f61c979f72f40b1b79d88f4577c7, type: 3}
 --- !u!1 &167250050
 GameObject:
   m_ObjectHideFlags: 0
