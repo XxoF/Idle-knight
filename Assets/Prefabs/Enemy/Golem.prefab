@@ -275,7 +275,7 @@ MonoBehaviour:
   BAT: 1.7
   ATK_Speed: 50
   armor: 30
-  baseHP: 500
+  baseHP: 1
   isPlayer: 0
   dmgReceivedText: {fileID: 0}
   dmgPopupPoint: {fileID: 0}
