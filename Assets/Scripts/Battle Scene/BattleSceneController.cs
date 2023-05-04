@@ -23,6 +23,7 @@ public class BattleSceneController : MonoBehaviour
     public GameObject UpgradeUI;
     public GameObject DeadMenuUI;
 
+    int i = 0;
     public enum BattleState
     {
         BATTLE,
@@ -39,6 +40,10 @@ public class BattleSceneController : MonoBehaviour
 
     void Awake()
     {
+        AudioManager.instance.Play("BattleTheme");
+        AudioManager.instance.Pause("Theme");
+
+
         playerGameObject = GameManager.instance.player;
         enemyGameObject = GameManager.instance.enemy;
 
@@ -89,6 +94,7 @@ public class BattleSceneController : MonoBehaviour
                     Debug.Log("Player Lose");
                     //player.GetComponent<AnimatorController>().setIsDied(true);
                     GameManager.instance.isPlayerAlive = false;
+
                     battleState = BattleState.LOSE;
                     //player.enabled = false;
                 }
@@ -97,6 +103,16 @@ public class BattleSceneController : MonoBehaviour
 
             case (BattleState.WIN):
                 //Debug.Log("Player win");
+
+                AudioManager.instance.StopPlaying("BattleTheme");
+
+                if (i == 0)
+                {
+                    AudioManager.instance.Play("VictoryFanfare");
+                    i += 1;
+                }
+                    
+                
 
                 if (!isUpgraded)
                 {
@@ -108,6 +124,9 @@ public class BattleSceneController : MonoBehaviour
                 }
                 else
                 {
+                    if (AudioManager.instance != null)
+                        AudioManager.instance.StopPlaying("VictoryFanfare");
+
                     //UpgradeUI.SetActive(false);
                     battleState = BattleState.OUT_BATTLE;
                 }
@@ -115,12 +134,25 @@ public class BattleSceneController : MonoBehaviour
                 break;
 
             case (BattleState.LOSE):
-                Debug.Log("Player lose");
+                AudioManager.instance.StopPlaying("BattleTheme");
+                
+                if (i == 0)
+                {
+                    print(i);
+                    i += 1;
+                    AudioManager.instance.Play("DeadTheme");
+                    
+                }
+                    
+
                 DeadMenuUI.SetActive(true);
                 Time.timeScale = 0f;
                 break;
 
             case (BattleState.OUT_BATTLE):
+                if (AudioManager.instance != null)
+                    AudioManager.instance.StopPlaying("BattleTheme");
+
                 GameManager.instance.gameState = GameManager.GameStates.IDLE_STATE;
                 GameManager.instance.endBattle = true;
                 SceneManager.LoadScene("Main_Scene");

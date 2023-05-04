@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPause = false;
+        AudioListener.pause = false;
     }
 
     public void pauseGame()
@@ -36,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPause = true;
+        AudioListener.pause = true;
     }
 
     public void LoadMenu()
@@ -43,10 +45,12 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Load Menu");
         gameIsPause = false;
 
+        DestroyAllRemainGameObjects();
+
         SceneManager.LoadSceneAsync("Menu_Scene");
 
 
-        DestroyAllRemainGameObjects();
+        
 
         Time.timeScale = 1f;
 
@@ -64,9 +68,11 @@ public class PauseMenu : MonoBehaviour
         GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        GameObject audioManager = GameObject.FindGameObjectWithTag("Audio");
 
         Destroy(gameManager);
         Destroy(player);
         Destroy(enemy);
+        Destroy(audioManager);
     }
 }

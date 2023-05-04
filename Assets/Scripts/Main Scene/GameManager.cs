@@ -130,6 +130,8 @@ public class GameManager : MonoBehaviour
             case (GameStates.IDLE_STATE):
                 //Debug.Log("IDLE STATE");
                 // After battle
+                if (AudioManager.instance != null)
+                    AudioManager.instance.Unpause("Theme");
 
                 if (!initState)
                 {
@@ -219,7 +221,6 @@ public class GameManager : MonoBehaviour
 
         enemyPrefab = enemyListPrefab[randomIndexEnemy];
 
-        Debug.Log(randomIndexEnemy);
 
         if (enemy == null)
         {
