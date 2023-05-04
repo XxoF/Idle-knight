@@ -89,12 +89,13 @@ Reward to Upgrade
 * April 29, 2023: Cập nhật Main menu, Pause menu và Restart game.
 * Cập nhật UI và HUD cho :`Win combat` và `Lose combat`.
 * Cập nhật `Dead UI` và cơ chế Restart Game mới sau khi chết.
-
+* May 3, cập nhật quái `enemy` mới: Anubis và Golem có `sprite`, `animation` và `stats` khác nhau.
+* Xây dựng cơ chế chọn ngẫu nhiên quái `enemy` trong danh sách monster.
+* May 5, cập nhật Audio cho game, bao gồm: Background theme, Battle theme music, Victory and Lose audio.
 
 ## TODO
-* music audio, ...
-* Thêm sprite cho quái
-* Xây dựng hệ thống data quái có những thuộc tính `stats` khác nhau
+* Add thêm Volume setting cho game.
+* Xây dựng tối thiểu 5 monster cho game.
 * Hiện Stats của `player`
 
 ## Bonus Feature
