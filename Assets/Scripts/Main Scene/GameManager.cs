@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
 
         Debug.Log("Awake!");
+        initState = true;
 
         // Check if instance exist
         if (instance == null)

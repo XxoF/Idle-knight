@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPause = false;
-        AudioListener.pause = false;
+        //AudioListener.pause = false;
     }
 
     public void pauseGame()
@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPause = true;
-        AudioListener.pause = true;
+        //AudioListener.pause = true;
     }
 
     public void LoadMenu()

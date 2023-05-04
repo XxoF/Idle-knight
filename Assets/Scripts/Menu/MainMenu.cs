@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadSceneAsync("Main_Scene");
-        GameManager.instance.initState = true;
+        
     }
 
     public void QuitGame()

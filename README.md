@@ -92,6 +92,7 @@ Reward to Upgrade
 * May 3, cập nhật quái `enemy` mới: Anubis và Golem có `sprite`, `animation` và `stats` khác nhau.
 * Xây dựng cơ chế chọn ngẫu nhiên quái `enemy` trong danh sách monster.
 * May 5, cập nhật Audio cho game, bao gồm: Background theme, Battle theme music, Victory and Lose audio.
+* Tối ưu Menu UI/UX. Thêm tùy chỉnh Volume cho game.
 
 ## TODO
 * Add thêm Volume setting cho game.
