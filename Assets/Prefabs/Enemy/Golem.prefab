@@ -270,11 +270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa57daeaff3a5a041adbe6def24aeb7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Golam
-  damage: 30
+  name: Golem
+  damage: 45
   BAT: 1.7
-  ATK_Speed: 50
-  armor: 30
+  ATK_Speed: 35
+  armor: 25
   baseHP: 600
   isPlayer: 0
   dmgReceivedText: {fileID: 0}

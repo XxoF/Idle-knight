@@ -265,11 +265,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Anubis
-  damage: 50
+  damage: 70
   BAT: 1.7
   ATK_Speed: 50
-  armor: 10
-  baseHP: 400
+  armor: 15
+  baseHP: 450
   isPlayer: 0
   dmgReceivedText: {fileID: 0}
   dmgPopupPoint: {fileID: 0}

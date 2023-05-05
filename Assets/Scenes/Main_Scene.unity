@@ -218,6 +218,9 @@ MonoBehaviour:
   enemyListPrefab:
   - {fileID: 490265138180355438, guid: e3e706aeff4a1aa4c840d8d4e9b25f64, type: 3}
   - {fileID: 1953370838520886378, guid: a9a1f61c979f72f40b1b79d88f4577c7, type: 3}
+  - {fileID: 4587853822966079537, guid: aa744153f777a554a99e876315de5a8d, type: 3}
+  - {fileID: 7202757851141149121, guid: de4e0edfd70ccb94fb1f270c8c081d2d, type: 3}
+  randomIndexEnemy: 0
 --- !u!1 &167250050
 GameObject:
   m_ObjectHideFlags: 0

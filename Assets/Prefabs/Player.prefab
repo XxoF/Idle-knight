@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: DK
-  damage: 100
+  damage: 70
   BAT: 1.7
   ATK_Speed: 50
-  armor: 100
+  armor: 10
   baseHP: 600
   isPlayer: 1
   dmgReceivedText: {fileID: 0}

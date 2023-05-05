@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
     public GameObject enemyPrefab;
     public List<GameObject> enemyListPrefab;
 
+
+    [SerializeField]
+    private int randomIndexEnemy;
+
     private void Start()
     {
         Debug.Log("Start game");
@@ -218,7 +222,7 @@ public class GameManager : MonoBehaviour
 
         int numberEnemyPrefab = enemyListPrefab.Count;
 
-        int randomIndexEnemy = Random.Range(0, numberEnemyPrefab);
+        randomIndexEnemy = Random.Range(0, numberEnemyPrefab);
 
         enemyPrefab = enemyListPrefab[randomIndexEnemy];
 
